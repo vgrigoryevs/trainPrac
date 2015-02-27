@@ -44,7 +44,7 @@
 
     TrainWagon.prototype.wagonIncome = function wagonIncome() {
         var options = this.options,
-        totalSeats = this.bottomSeat+this.topSeat+this.bottomSideSeat+this.topSideSeat;
+        totalSeats = this.bottomSeat+this.topSeat+this.bottomSideSeat+this.topSideSeat,
         total = 0;	
   	
   	    for (key in options) { 
@@ -57,24 +57,27 @@
         total+=this.topSideSeat*this.topSidePrice;
 
 
-  	      return total
+  	      return total;
     }
 
     PassengerTrain.prototype.trainIncome = function trainIncome() {
         var total = 0;
-        for (key in this) {
-            if (typeof  this[key] === "object") {
-              total+=this[key].wagonIncome();
-            }
+            for (key in this) {
+                if (typeof  this[key] === "object") {
+                  total+=this[key].wagonIncome();
+                }
 
-        }
+            }
 
         return total;
     }
 
 
-    var train = new PassengerTrain();
-    var first = new CompartmentWagon(1,1,1,1);
-    var second = new CompartmentWagon(1,1,1,1);
-    train.addWagon(first);
-    train.addWagon(second);
+    var train = new PassengerTrain(),
+    firstWagon = new CompartmentWagon(10,10,10,10),
+    secondWagon = new ReservedWagon(10,10,10,10),
+    thirdWagon = new Sw(10,10,10,10);
+    
+    train.addWagon(firstWagon);
+    train.addWagon(secondWagon);
+    train.addWagon(thirdWagon);
