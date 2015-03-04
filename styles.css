@@ -1,0 +1,37 @@
+#allWagons {
+	border:1px solid black;
+	border-collapse: collapse
+}
+
+#allWagons td, th{
+	padding:10px;
+	text-align: center;
+	border:1px solid black;
+}
+
+#leftDiv {
+	float:left;
+	width:11%;
+	margin-right: 10px;
+	background-color: azure;
+}
+
+#leftDiv p {
+	text-align: center;
+}
+
+#rightDiv {
+	float: left;
+	background-color: darkgrey;
+}
+
+input {
+	width:90%;
+	padding-left: 10px;
+	margin:0 auto;
+}
+
+#newWagon {
+	width:96%;
+	padding-left: 10px;
+}

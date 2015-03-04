@@ -3,9 +3,50 @@
 	<head>
 		<meta charset="utf-8">
 			<title>Задача</title>
-				<script type="text/javascript" src="script.js">
-					</script>
+			<link rel="stylesheet" href="styles.css">	
 	</head>
 		<body>
+			<div id="leftDiv">
+				<form name="mainForm">
+					<p>Введите номер вагона</p>
+					<input type="text" id="nameOfWagon" placeholder="1/98">
+					<p>Выберете тип вагона</p>
+					<select id="newWagon" onchange="choseOption()">
+  						<option value="CompartmentWagon">Плацкарт</option>
+  						<option value="ReservedWagon">Купе</option>
+  						<option value="Sw">СВ</option>
+					</select>
+					<p><b>Введите количество мест:</b></p>
+					<p>Нижних</p>
+					<input type="text" id="bottomSeat" placeholder="120" >
+					<p id="topSeatText">Верхних</p>
+					<input type="text" id="topSeat" placeholder="120">
+					<p id="bottomSideSeatText">Нижних боковых</p>
+					<input type="text" id="bottomSideSeat" placeholder="100">
+					<p id="topSideSeatText">Верхних боковых</p>
+					<input type="text" id="topSideSeat" placeholder="100">
+					<p>
+					<input type="button" id ="submit" value="Добавить новый вагон" onclick="makeNewWagon()">
+					<input type="button" id ="findTrainIncome" value="Узнать доходность поезда" onclick="alert('Доходность поезда ' + train.trainIncome())">
+					</p>
+				</form>
+			</div>
+
+			<div id="rightDiv">
+				<table id="allWagons">
+					<tr>
+   						<th>Номер вагона</th>
+						<th>Тип вагона</th>
+						<th>Нижних мест</th>
+						<th>Верхних мест</th>
+						<th>Нижних боковых мест</th>
+						<th>Верхних боковых мест</th>
+						<th>Доход от вагона</th>
+					</tr>
+				</table>
+			</div>
+
+			<script type="text/javascript" src="script.js">
+			</script>
 		</body>
 </html>
