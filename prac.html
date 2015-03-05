@@ -18,13 +18,13 @@
 					</select>
 					<p><b>Введите количество мест:</b></p>
 					<p>Нижних</p>
-					<input type="text" id="bottomSeat" placeholder="120" >
+					<input type="text" id="bottomSeat" placeholder="120" onkeyup="checkForNumbers(this)">
 					<p id="topSeatText">Верхних</p>
-					<input type="text" id="topSeat" placeholder="120">
+					<input type="text" id="topSeat" placeholder="120" onkeyup="checkForNumbers(this)">
 					<p id="bottomSideSeatText">Нижних боковых</p>
-					<input type="text" id="bottomSideSeat" placeholder="100">
+					<input type="text" id="bottomSideSeat" placeholder="100" onkeyup="checkForNumbers(this)">
 					<p id="topSideSeatText">Верхних боковых</p>
-					<input type="text" id="topSideSeat" placeholder="100">
+					<input type="text" id="topSideSeat" placeholder="100" onkeyup="checkForNumbers(this)">
 					<p>
 					<input type="button" id ="submit" value="Добавить новый вагон" onclick="makeNewWagon()">
 					<input type="button" id ="findTrainIncome" value="Узнать доходность поезда" onclick="alert('Доходность поезда ' + train.trainIncome())">

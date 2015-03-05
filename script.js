@@ -7,7 +7,7 @@ function makeNewWagon() {
         bottomSideSeat = document.getElementById("bottomSideSeat").value,
         topSideSeat = document.getElementById("topSideSeat").value;
 
-    if(isNaN(+bottomSeat)||isNaN(+topSeat)||isNaN(+bottomSideSeat)||isNaN(+topSideSeat)) {
+    if(isNaN(bottomSeat)||isNaN(topSeat)||isNaN(bottomSideSeat)||isNaN(topSideSeat)) {
         return alert("Неправильный ввод данных");
     }
 
@@ -160,3 +160,13 @@ PassengerTrain.prototype.trainIncome = function trainIncome() {
 var train = new PassengerTrain(),
     wagons = {};
 
+function checkForNumbers(inp) {
+    var re = /[a-z]/gi;
+    if(re.test(inp.value)) {
+        inp.style.backgroundColor = "red";
+    }
+
+    else {
+        inp.style.backgroundColor = "";
+    }
+}
